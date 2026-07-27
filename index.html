@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11130f">
+  <meta name="description" content="15 款生存建造、工廠自動化與 MMO 遊戲的互動式建造系統圖鑑：看懂材料、工作站、Boss、知識與等待如何控制你的下一步。">
+  <meta property="og:title" content="生存建造解鎖圖鑑">
+  <meta property="og:description" content="為什麼有些升級像冒險，有些像打卡？用 15 款遊戲拆解好玩的建造進程。">
+  <meta property="og:type" content="website">
+  <title>生存建造解鎖圖鑑</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="回到頁首">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>生存建造<br><b>解鎖圖鑑</b></span>
+    </a>
+    <nav class="site-nav" aria-label="主要導覽">
+      <a href="#rules">三條規則</a>
+      <a href="#atlas">遊戲圖鑑</a>
+      <a href="#routes">解鎖路線</a>
+      <a href="#field-guide">設計指南</a>
+    </nav>
+    <a class="header-cta" href="#atlas">開始探索 <span aria-hidden="true">↓</span></a>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> 15 款遊戲，一張建造世界地圖</p>
+        <h1 id="hero-title">你蓋的不是房子。<br><em>是一條解鎖路線。</em></h1>
+        <p class="hero-lead">這份報告在拆解一件玩家都感受過、卻很少說清楚的事：遊戲如何讓你「還不能蓋那個」，又怎麼讓跨過門檻的瞬間值得期待。從 Minecraft 的第一把木鎬，到 Valheim 的 Boss 鑰匙，再到瑪奇 Mobile 的等待牆，一次看懂建造系統背後的節奏機關。</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#atlas">翻開 15 款圖鑑</a>
+          <a class="button button-secondary" href="#rules">先看 3 分鐘結論</a>
+        </div>
+        <dl class="hero-stats" aria-label="報告規模">
+          <div><dt>15</dt><dd>款遊戲</dd></div>
+          <div><dt>10</dt><dd>種門檻機制</dd></div>
+          <div><dt>3</dt><dd>條核心規則</dd></div>
+        </dl>
+      </div>
+
+      <div class="hero-map" aria-label="從採集到新區域的解鎖循環示意圖">
+        <div class="map-grid" aria-hidden="true"></div>
+        <p class="map-label">PROGRESSION LOOP / 進程循環</p>
+        <div class="loop-orbit" aria-hidden="true">
+          <span class="orbit-dot dot-a"></span>
+          <span class="orbit-dot dot-b"></span>
+          <span class="orbit-dot dot-c"></span>
+        </div>
+        <div class="loop-center">
+          <span class="loop-icon" aria-hidden="true">◆</span>
+          <b>新的能力</b>
+          <small>不是 +10% 數字</small>
+        </div>
+        <ol class="loop-nodes">
+          <li class="node-material"><span>01</span><b>採新材料</b><small>走得更遠</small></li>
+          <li class="node-station"><span>02</span><b>蓋工作站</b><small>基地成長</small></li>
+          <li class="node-ritual"><span>03</span><b>過硬門</b><small>留下記憶點</small></li>
+        </ol>
+        <p class="map-caption">好玩的進程，會讓「出門冒險」與「回家建造」彼此咬合。</p>
+      </div>
+    </section>
+
+    <section class="rules section-shell" id="rules" aria-labelledby="rules-title">
+      <header class="section-heading">
+        <p class="section-index">01 / 三條規則</p>
+        <div>
+          <h2 id="rules-title">為什麼有些升級像冒險，<br>有些卻像上班？</h2>
+          <p>15 款遊戲最後反覆指向三條分水嶺。</p>
+        </div>
+      </header>
+
+      <div class="rule-grid">
+        <article class="rule-card rule-gold">
+          <div class="rule-number">01</div>
+          <div class="triangle-mini" aria-hidden="true">
+            <span class="tri-a">材料</span>
+            <span class="tri-b">工作站</span>
+            <span class="tri-c">Boss</span>
+            <i></i>
+          </div>
+          <p class="rule-kicker">黃金三角 GATING</p>
+          <h3>材料 × 工作站 × Boss 儀式</h3>
+          <p>新區域給材料、材料逼你回基地升級，一個 Boss 或事件替每一階蓋下句點。Valheim、Terraria、Grounded、Enshrouded 都靠這個循環維持推進感。</p>
+          <div class="rule-example"><span>最佳範例</span> Valheim：王掉鑰匙 → 新材料 → 新工作站 → 新區域</div>
+        </article>
+
+        <article class="rule-card rule-cyan">
+          <div class="rule-number">02</div>
+          <div class="ability-mini" aria-hidden="true">
+            <span class="number-drop">+10%</span>
+            <span class="ability-key">解鎖<br><b>新動詞</b></span>
+          </div>
+          <p class="rule-kicker">ABILITY OVER STATS</p>
+          <h3>獎勵要給「能力」，不要只給「數字」</h3>
+          <p>能挖礦、能看見銀礦、能讓整個世界進入 Hardmode——玩家會記得「現在能做什麼」，很少記得攻擊力多了幾趴。</p>
+          <div class="rule-example"><span>玩家記得</span> Eikthyr 的鹿角鎬，而不是又一把數值更高的槍</div>
+        </article>
+
+        <article class="rule-card rule-red">
+          <div class="rule-number">03</div>
+          <div class="wait-mini" aria-hidden="true">
+            <span class="play-side">打・挖・找・蓋</span>
+            <span class="wait-wall"></span>
+            <span class="wait-side">等明天</span>
+          </div>
+          <p class="rule-kicker">THE WAITING LINE</p>
+          <h3>買斷制 vs 免費制，分界線是「等待」</h3>
+          <p>買斷遊戲的門檻把你推向下一段內容；F2P 的計時、限購與掛機，則把進度攤平到日曆上。相同的材料階層，服務的是完全不同的目標。</p>
+          <div class="rule-example"><span>一刀切開</span> 「倒數逼你準備」是節拍器；「計時逼你等」是牆</div>
+        </article>
+      </div>
+
+      <p class="section-takeaway"><span>本章 takeaway</span> 最理想的門不是把你擋住，而是清楚指向下一場值得出發的冒險。</p>
+    </section>
+
+    <section class="atlas section-shell" id="atlas" aria-labelledby="atlas-title">
+      <header class="section-heading">
+        <p class="section-index">02 / 互動圖鑑</p>
+        <div>
+          <h2 id="atlas-title">15 款遊戲，15 種讓你<br>「還不能蓋」的方法</h2>
+          <p>篩選想看的門檻；勾選兩款，就能正面比較。</p>
+        </div>
+      </header>
+
+      <div class="filter-panel" aria-label="遊戲篩選器">
+        <div class="search-wrap">
+          <label for="game-search">搜尋遊戲或機制</label>
+          <div class="search-field">
+            <span aria-hidden="true">⌕</span>
+            <input id="game-search" type="search" placeholder="例如：Boss、掃描、工作站…" autocomplete="off">
+            <kbd>/</kbd>
+          </div>
+        </div>
+
+        <fieldset class="filter-group" id="gate-filters">
+          <legend>主要門檻</legend>
+          <div class="filter-chips">
+            <button class="filter-chip is-active" type="button" data-gate="all" aria-pressed="true">全部</button>
+            <button class="filter-chip" type="button" data-gate="material" aria-pressed="false">材料／工具</button>
+            <button class="filter-chip" type="button" data-gate="station" aria-pressed="false">工作站</button>
+            <button class="filter-chip" type="button" data-gate="boss" aria-pressed="false">Boss／事件</button>
+            <button class="filter-chip" type="button" data-gate="knowledge" aria-pressed="false">知識／藍圖</button>
+            <button class="filter-chip" type="button" data-gate="currency" aria-pressed="false">貨幣／交付</button>
+            <button class="filter-chip" type="button" data-gate="time" aria-pressed="false">時間</button>
+            <button class="filter-chip" type="button" data-gate="region" aria-pressed="false">區域／深度</button>
+            <button class="filter-chip" type="button" data-gate="level" aria-pressed="false">等級／技能</button>
+            <button class="filter-chip" type="button" data-gate="key" aria-pressed="false">道具鑰匙</button>
+            <button class="filter-chip" type="button" data-gate="labor" aria-pressed="false">人力／生物</button>
+          </div>
+        </fieldset>
+
+        <div class="filter-row">
+          <fieldset class="filter-group compact" id="mode-filters">
+            <legend>商業模式</legend>
+            <div class="segmented">
+              <button class="is-active" type="button" data-mode="all" aria-pressed="true">全部</button>
+              <button type="button" data-mode="premium" aria-pressed="false">買斷制</button>
+              <button type="button" data-mode="f2p" aria-pressed="false">免費制</button>
+            </div>
+          </fieldset>
+          <fieldset class="filter-group compact" id="group-filters">
+            <legend>遊戲定位</legend>
+            <div class="segmented">
+              <button class="is-active" type="button" data-group="all" aria-pressed="true">全部</button>
+              <button type="button" data-group="survival" aria-pressed="false">生存／沙盒</button>
+              <button type="button" data-group="factory" aria-pressed="false">工廠對照</button>
+              <button type="button" data-group="mmo" aria-pressed="false">手遊對照</button>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="filter-status">
+          <p aria-live="polite">顯示 <strong id="result-count">15</strong> / 15 款</p>
+          <button id="reset-filters" class="text-button" type="button">清除篩選</button>
+        </div>
+      </div>
+
+      <div class="game-grid" id="game-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden>
+        <span aria-hidden="true">◇</span>
+        <h3>這條路線還沒解鎖</h3>
+        <p>換個關鍵字或清除篩選，再找一次。</p>
+        <button class="button button-secondary" type="button" id="empty-reset">顯示全部遊戲</button>
+      </div>
+
+      <div class="compare-tray" id="compare-tray" hidden>
+        <div>
+          <span class="compare-count" id="compare-count">0 / 2</span>
+          <p><b>比較背包</b><small id="compare-names">選兩款遊戲</small></p>
+        </div>
+        <button class="text-button compare-clear" id="compare-clear" type="button">清空</button>
+        <button class="button button-primary" id="compare-open" type="button" disabled>打開比較</button>
+      </div>
+
+      <p class="section-takeaway"><span>本章 takeaway</span> 單一門檻很快會變成苦工；讓主門檻搭配一到兩個輔門檻，玩家才會在探索、建造與挑戰之間換氣。</p>
+    </section>
+
+    <section class="routes section-shell" id="routes" aria-labelledby="routes-title">
+      <header class="section-heading">
+        <p class="section-index">03 / 解鎖路線</p>
+        <div>
+          <h2 id="routes-title">把進程攤開來看，<br>每一扇門都在說話</h2>
+          <p>切換遊戲，沿著節點看它如何把第一把工具一路接到終局。</p>
+        </div>
+      </header>
+
+      <div class="route-console">
+        <div class="route-toolbar">
+          <div class="route-select-wrap">
+            <label for="route-select">選擇遊戲</label>
+            <select id="route-select"></select>
+          </div>
+          <div class="route-arrows" aria-label="切換遊戲">
+            <button id="route-prev" type="button" aria-label="上一款遊戲">←</button>
+            <span id="route-position">01 / 15</span>
+            <button id="route-next" type="button" aria-label="下一款遊戲">→</button>
+          </div>
+        </div>
+
+        <div class="route-header">
+          <div>
+            <p id="route-class">生存／沙盒 · 買斷制</p>
+            <h3 id="route-name">Minecraft</h3>
+          </div>
+          <p id="route-hook"></p>
+        </div>
+
+        <div class="route-viewport">
+          <div class="route-line" id="route-line" role="img" aria-label="遊戲解鎖進程"></div>
+        </div>
+
+        <div class="route-facts">
+          <article>
+            <span>MAIN GATE / 主門檻</span>
+            <h4 id="route-main-title"></h4>
+            <p id="route-main-copy"></p>
+          </article>
+          <article>
+            <span>SUPPORT / 輔助門檻</span>
+            <h4 id="route-support-title"></h4>
+            <p id="route-support-copy"></p>
+          </article>
+          <article class="route-friction">
+            <span>WHEN STUCK / 卡住時</span>
+            <h4 id="route-stuck-title"></h4>
+            <p id="route-stuck-copy"></p>
+          </article>
+        </div>
+
+        <div class="route-meta">
+          <p><span>階層</span><b id="route-tiers"></b></p>
+          <p><span>時間量級</span><b id="route-hours"></b></p>
+          <div id="route-sources" class="route-sources"></div>
+        </div>
+      </div>
+
+      <p class="section-takeaway"><span>本章 takeaway</span> 好路線讓玩家同時「看得到目標、拿不到目標、知道怎麼拿」；少一項，就會變成漂流、無聊或迷航。</p>
+    </section>
+
+    <section class="field-guide section-shell" id="field-guide" aria-labelledby="guide-title">
+      <header class="section-heading">
+        <p class="section-index">04 / 玩家＆設計者指南</p>
+        <div>
+          <h2 id="guide-title">一扇好門的配方，<br>其實可以自己測</h2>
+          <p>按按看：拿掉哪一塊，玩家的感受就會開始變質？</p>
+        </div>
+      </header>
+
+      <div class="clarity-lab">
+        <div class="lab-intro">
+          <p class="lab-label">BLOCKER CLARITY TEST</p>
+          <h3>「看得到 × 拿不到 × 知道怎麼拿」測試</h3>
+          <p>三個條件都成立，門檻才會把挫折轉成期待。點擊任一條件，看看失去它會發生什麼。</p>
+        </div>
+        <div class="lab-controls" id="clarity-controls">
+          <button class="clarity-toggle is-on" type="button" data-clarity="showcase" aria-pressed="true">
+            <span class="toggle-mark" aria-hidden="true">✓</span>
+            <span><b>看得到</b><small>知道前面有新玩具</small></span>
+          </button>
+          <span class="formula-mark" aria-hidden="true">×</span>
+          <button class="clarity-toggle is-on" type="button" data-clarity="gate" aria-pressed="true">
+            <span class="toggle-mark" aria-hidden="true">✓</span>
+            <span><b>拿不到</b><small>需要跨過一道門</small></span>
+          </button>
+          <span class="formula-mark" aria-hidden="true">×</span>
+          <button class="clarity-toggle is-on" type="button" data-clarity="map" aria-pressed="true">
+            <span class="toggle-mark" aria-hidden="true">✓</span>
+            <span><b>知道怎麼拿</b><small>下一步因果清楚</small></span>
+          </button>
+        </div>
+        <div class="lab-result is-good" id="clarity-result" aria-live="polite">
+          <span class="result-icon" aria-hidden="true">✦</span>
+          <div>
+            <b>期待感成立</b>
+            <p>玩家知道自己為何出發，也知道努力會換來什麼。</p>
+          </div>
+          <span class="result-example">例：Valheim、Terraria、Enshrouded</span>
+        </div>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-panel golden-panel">
+          <p class="panel-label">THE GOLDEN LOOP</p>
+          <h3>黃金三角不是三道牆，<br>是三種活動的輪替</h3>
+          <div class="golden-loop" aria-label="材料、工作站、儀式硬門的循環">
+            <div class="loop-step step-explore">
+              <span aria-hidden="true">▲</span>
+              <b>材料門</b>
+              <small>出門探索</small>
+            </div>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <div class="loop-step step-build">
+              <span aria-hidden="true">■</span>
+              <b>工作站</b>
+              <small>回家投資</small>
+            </div>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <div class="loop-step step-boss">
+              <span aria-hidden="true">◆</span>
+              <b>儀式硬門</b>
+              <small>留下記憶</small>
+            </div>
+          </div>
+          <p>玩家不會一直做同一件事，所以成本增加也較不容易疲乏。</p>
+        </article>
+
+        <article class="guide-panel ability-panel">
+          <p class="panel-label">VERBS BEAT NUMBERS</p>
+          <h3>讓獎勵改變句子裡的動詞</h3>
+          <div class="verb-list">
+            <div><span>Valheim</span><b>能挖</b><small>鹿角鎬打開礦物階段</small></div>
+            <div><span>Subnautica</span><b>能下潛</b><small>深度模組打開新海域</small></div>
+            <div><span>Terraria</span><b>能改變世界</b><small>Wall of Flesh 開啟 Hardmode</small></div>
+          </div>
+          <p>數值讓角色變強；能力讓玩家的世界變大。</p>
+        </article>
+
+        <article class="guide-panel economy-panel">
+          <p class="panel-label">TWO BUSINESS PHILOSOPHIES</p>
+          <h3>等待，是一條不能裝作不存在的線</h3>
+          <div class="economy-split">
+            <div>
+              <span class="mode-badge">買斷制</span>
+              <b>「去做事」就能推進</b>
+              <ul>
+                <li>打 Boss</li>
+                <li>挖新材料</li>
+                <li>找到藍圖</li>
+                <li>蓋工作站</li>
+              </ul>
+              <p>門檻引導內容消費</p>
+            </div>
+            <div>
+              <span class="mode-badge f2p">免費制</span>
+              <b>「等時間」才能推進</b>
+              <ul>
+                <li>加工計時</li>
+                <li>每日限購</li>
+                <li>掛機產出</li>
+                <li>失敗率回收</li>
+              </ul>
+              <p>門檻管理留存與供給</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="guide-panel cost-panel">
+          <p class="panel-label">COST × CAPACITY</p>
+          <h3>成本可以暴增，但產能也要跟上</h3>
+          <div class="capacity-chart" aria-label="成本與產能需同步成長的概念圖">
+            <div class="chart-labels"><span>前期</span><span>中期</span><span>後期</span></div>
+            <div class="chart-row good">
+              <span>Factorio / Satisfactory</span>
+              <i style="--w: 22%"></i><i style="--w: 55%"></i><i style="--w: 96%"></i>
+              <small>成本 ↑　產能也 ↑</small>
+            </div>
+            <div class="chart-row bad">
+              <span>Palworld 中期困境</span>
+              <i style="--w: 22%"></i><i style="--w: 54%"></i><i style="--w: 90%"></i>
+              <small>配方量先跑，產能慢半拍</small>
+            </div>
+          </div>
+          <p>千件交付不一定是 grind；手搓一百件也可能已經是。</p>
+        </article>
+      </div>
+
+      <p class="section-takeaway"><span>本章 takeaway</span> 真正該問的不是「門檻夠不夠高」，而是跨門時有沒有得到新能力、途中有沒有另一條線可走。</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-mark" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div>
+      <b>生存建造解鎖圖鑑</b>
+      <p>資料整理日期 2026-07-26 · AI 輔助研究整理</p>
+    </div>
+    <p class="footer-note">數字與時數依研究素材所列 wiki、官方文件及社群共識整理；時數僅供量級參考。</p>
+    <a href="#top">回到頁首 ↑</a>
+  </footer>
+
+  <dialog class="compare-dialog" id="compare-dialog" aria-labelledby="compare-title">
+    <div class="dialog-header">
+      <div>
+        <p class="section-index">HEAD TO HEAD</p>
+        <h2 id="compare-title">解鎖機制正面對決</h2>
+      </div>
+      <button id="compare-close" type="button" aria-label="關閉比較">×</button>
+    </div>
+    <div class="compare-content" id="compare-content"></div>
+  </dialog>
+
+  <noscript>
+    <div class="noscript">這份圖鑑需要 JavaScript 才能篩選、比較與切換解鎖路線。</div>
+  </noscript>
+</body>
+</html>
