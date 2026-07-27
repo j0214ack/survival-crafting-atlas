@@ -370,21 +370,21 @@ const games = [
     primary: "knowledge",
     gates: ["knowledge", "time", "material", "station", "level"],
     mainTitle: "RNG 雜誌知識門",
-    mainCopy: "約 90% 配方靠散落世界的技能雜誌；技能點不直接解鎖，而是提高對應雜誌掉落權重。",
-    supportTitle: "七日血月節拍器",
-    supportCopy: "每七天一次的圍城倒數，強迫玩家替基地防禦設定明確短期目標。",
+    mainCopy: "約 90% 配方靠散落世界與商人手中的技能雜誌；20+ 種系列各需閱讀 20–100 本，才能逐步解鎖配方與品質。",
+    supportTitle: "權重押注＋七日血月",
+    supportCopy: "技能點不直接解配方，只提高對應雜誌的掉落權重；每七天一次的圍城倒數，則替基地防禦設定短期目標。",
     stuckTitle: "能押注機率，不能指定結果",
     stuckCopy: "權重系統緩解但不消除 RNG 挫折；交換到的是每個書架都可能升級的持續期待。",
     tiers: "材料 4 階 × 品質 6 級",
-    hours: "專注路線取得坩堝約 8–12 小時",
+    hours: "專注工程路線約遊戲內 12 天（約 8–12 小時）取得坩堝",
     takeaway: "控制「分布」而不是結果，讓撿垃圾變抽卡；但 RNG 知識門永遠需要保底與導向。",
     route: [
       { title: "徒手／石器", note: "開局配方免解鎖", type: "material" },
-      { title: "技能雜誌", note: "散落 loot 與商人", type: "knowledge" },
+      { title: "技能雜誌", note: "散落 loot 與商人；Forge Ahead 至少有商人保底", type: "knowledge" },
       { title: "技能點押注", note: "提高對應系列掉落權重", type: "level" },
-      { title: "熔爐／工作台", note: "讀到足量雜誌才開", type: "station" },
+      { title: "Forge Ahead", note: "熔爐 → 鐵器 → 坩堝 → 鋼", type: "station" },
+      { title: "工作台系列", note: "Workbench → 車輛／電器鏈", type: "station" },
       { title: "品質 Q1→Q6", note: "繼續閱讀提升製作品質", type: "knowledge" },
-      { title: "坩堝／鋼", note: "Forge Ahead 後段目標", type: "material" },
       { title: "第七日血月", note: "基地防禦的固定交卷日", type: "time" }
     ],
     sources: [
@@ -520,6 +520,50 @@ const games = [
   }
 ];
 
+const expectedGameCounts = Object.freeze({
+  survival: 12,
+  factory: 2,
+  mmo: 1
+});
+
+function assertGameCatalog() {
+  const requiredFields = [
+    "id", "name", "group", "mode", "accent", "tagline", "primary", "gates",
+    "mainTitle", "mainCopy", "supportTitle", "supportCopy", "stuckTitle",
+    "stuckCopy", "tiers", "hours", "takeaway", "route", "sources"
+  ];
+  const expectedTotal = Object.values(expectedGameCounts).reduce((sum, count) => sum + count, 0);
+  const ids = new Set();
+
+  if (games.length !== expectedTotal) {
+    throw new Error(`遊戲總數不一致：預期 ${expectedTotal}，實際 ${games.length}`);
+  }
+
+  Object.entries(expectedGameCounts).forEach(([group, expectedCount]) => {
+    const actualCount = games.filter((game) => game.group === group).length;
+    if (actualCount !== expectedCount) {
+      throw new Error(`${groupLabels[group]}數量不一致：預期 ${expectedCount}，實際 ${actualCount}`);
+    }
+  });
+
+  games.forEach((game) => {
+    const missingFields = requiredFields.filter((field) => !(field in game));
+    if (missingFields.length) {
+      throw new Error(`${game.name || game.id} 缺少欄位：${missingFields.join(", ")}`);
+    }
+    if (ids.has(game.id)) {
+      throw new Error(`遊戲 id 重複：${game.id}`);
+    }
+    ids.add(game.id);
+  });
+
+  if (!ids.has("7-days-to-die")) {
+    throw new Error("遊戲目錄缺少 7 Days to Die");
+  }
+}
+
+assertGameCatalog();
+
 const state = {
   gate: "all",
   mode: "all",
@@ -532,6 +576,7 @@ const state = {
 const els = {
   grid: document.querySelector("#game-grid"),
   count: document.querySelector("#result-count"),
+  total: document.querySelector("#result-total"),
   empty: document.querySelector("#empty-state"),
   search: document.querySelector("#game-search"),
   tray: document.querySelector("#compare-tray"),
@@ -617,6 +662,7 @@ function renderGames() {
   const visible = filteredGames();
   els.grid.innerHTML = visible.map(gameCardTemplate).join("");
   els.count.textContent = String(visible.length);
+  els.total.textContent = String(games.length);
   els.empty.hidden = visible.length > 0;
   els.grid.hidden = visible.length === 0;
   updateCompareTray();
